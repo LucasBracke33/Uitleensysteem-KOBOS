@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOBOS - Uitleensysteem</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="static/images/logotransparant.png" alt="School Logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+        <li><a href="loginpagina.html">Log in</a></li>
+        <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-filter-box-toevoegen">
+    <h1>VOEG BOEKEN TOE</h1>
+      <form method="POST" action="/add_book"> <!-- gebruikt de functie add book in app.py -> zorgt dus dat de boeken worden toegevoegd aan de database -->
+    <div class="search-field-toevoegen">
+      <label for="titel">Titel</label>  <!-- veld word opgenomen en opgeslagen in database -->
+      <input type="text" id="titel" name="titel" placeholder="Typ de titel van jouw boek">
+    </div>
+    <div class="search-field-toevoegen">
+      <label for="auteur">Auteur</label> <!-- veld word opgenomen en opgeslagen in database -->
+      <input type="text" id="auteur" name="auteur" placeholder="Typ het auteur van de boek">
+    </div>
+    <div class="search-field-toevoegen">
+      <label for="categorie">Categorie</label> <!-- veld word opgenomen en opgeslagen in database -->
+      <input type="text" id="categorie" name="categorie" placeholder="Zoek voor een bepaalde categorie">
+    </div>
+    <div class="search-field-toevoegen">
+      <label for="ISBN_nummer">ISBN nummer</label> <!-- veld word opgenomen en opgeslagen in database -->
+      <input type="text" id="ISBN_nummer" name="ISBN_nummer" placeholder="Typ de ISBN nummer in">
+    </div>
+    <div class="search-field-toevoegen">
+      <label for="jaar">Jaar</label> <!-- veld word opgenomen en opgeslagen in database -->
+      <input type="text" id="jaar" name="jaar" placeholder="Typ het jaar van de uitbrengingsdatum in">
+    </div>
+    <button onclick="zoeken()">Toevoegen</button> <!-- zoeken in database -->
+      </form>
+  </div>
+
+  <footer>
+    <div class="social-media">
+      <a href="https://www.facebook.com/kobos.be/?locale=nl_BE"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/kobos_secundair/"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 KOBOS</p>
+    <p>Veldstraat 11 / Mechelseweg 129 - 1880 Kapelle-op-den-Bos</p>
+  </footer>
+
+  <script>
+    function zoeken() {
+      const zoekTerm1 = document.getElementById('search1').value;
+      const zoekTerm2 = document.getElementById('search2').value;
+      const zoekTerm3 = document.getElementById('search3').value;
+      const zoekTerm4 = document.getElementById('search4').value;
+
+      alert(`Je zocht naar: "${zoekTerm1}", "${zoekTerm2}", "${zoekTerm3}", "${zoekTerm4}"`);
+    }
+  </script>
+
+</body>
+</html>

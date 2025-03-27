@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOBOS - Uitleensysteem</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body-boeken> <!--andere css voor body voor perfecte styling -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="static/images/logotransparant.png" alt="School Logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+        <li><a href="loginpagina.html">Log in</a></li>
+        <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="search-filter-box"> <!-- zoekvelden waar de user zijn boeken kan vinden -->
+    <h1>ZOEK JOUW BOEKEN</h1>
+      <form method="post" > <!-- indien geklikt -> POST -> resultaten komen in tabel -->
+    <div class="search-field">
+      <label for="search1">Titel</label> <!-- belangrijk voor database, indien je naam label verandert -> ook in de fucntie die verandert -->
+      <input type="text" id="search1" name="search1" placeholder="Zoek voor de titel van jouw boek">
+    </div>
+    <div class="search-field">
+      <label for="search2">Auteur</label>
+      <input type="text" id="search2" name="search2" placeholder="Zoek voor jouw auteur">
+    </div>
+    <div class="search-field">
+      <label for="search3">Categorie</label>
+      <input type="text" id="search3" name="search3" placeholder="Zoek voor een bepaalde categorie">
+    </div>
+    <input type="submit" value="Zoeken">
+      </form>
+  </div>
+    <table> <!-- primitieve tabel waar alles in wordt getoond -->
+        <tr>
+            <th>Titel</th>
+            <th>Auteur</th>
+            <th>categorie</th>
+            <th>jaar</th>
+            <th>ISBN_nummer</th>
+        </tr>
+        {% for Boek in boeken %} <!-- zoeken voor info over boek in database -->
+        <tr><!-- indien je alles in div wilt steken -> boek.titel in div steken en dan in een p text -> zie pagina "Uitleensysteem" -->
+            <td>{{ Boek.titel }}</td>
+            <td>{{ Boek.auteur }}</td>
+            <td>{{ Boek.categorie }}</td>
+            <td>{{ Boek.jaar }}</td>
+            <td>{{ Boek.ISBN_nummer }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  <footer>
+    <div class="social-media">
+      <a href="https://www.facebook.com/kobos.be/?locale=nl_BE"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/kobos_secundair/"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 KOBOS</p>
+    <p>Veldstraat 11 / Mechelseweg 129 - 1880 Kapelle-op-den-Bos</p>
+  </footer>
+
+  <script>
+    function zoeken() {
+      const zoekTerm1 = document.getElementById('search1').value;
+      const zoekTerm2 = document.getElementById('search2').value;
+      const zoekTerm3 = document.getElementById('search3').value;
+      const zoekTerm4 = document.getElementById('search4').value;
+
+      alert(`Je zocht naar: "${zoekTerm1}", "${zoekTerm2}", "${zoekTerm3}", "${zoekTerm4}"`);
+    }
+  </script>
+
+</body-boeken>
+</html>

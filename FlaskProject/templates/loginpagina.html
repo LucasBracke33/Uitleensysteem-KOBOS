@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOBOS - Login Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}"></head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="static/images/logotransparant.png" alt="School Logo">
+            </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+            <li><a href="loginpagina.html">Log in</a></li>
+            <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h2>LOGIN</h2>
+        <form> <!-- invulvelden voor de login pagina -->
+            <div class="input-group">
+                <label-login for="username">Naam</label-login> <!-- veld word opgenomen en opgeslagen in database -->
+                <input type="text" id="username" name="naam" required>
+            </div>
+            <div class="input-group">
+                <label-login for="password">Wachtwoord</label-login> <!-- veld word opgenomen en opgeslagen in database -->
+                <input type="password" id="password" name="wachtwoord" required>
+            </div>
+            <button type="submit">LOGIN</button>
+        </form>
+        <p>Niet geregistreerd? <a href="registreerpagina.html">Creër een account</a></p>
+    </div>
+</body>
+</html>

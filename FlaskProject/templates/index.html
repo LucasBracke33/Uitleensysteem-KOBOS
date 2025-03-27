@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOBOS - Uitleensysteem</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}">
+  <http-equiv="refresh" content="0;url=index.html">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="static/images/logotransparant.png" alt="School Logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+        <li><a href="loginpagina.html">Log in</a></li>
+        <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main> <!-- stukje die iedereen ziet -->
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1>Welkom bij onze bibliotheek</h1>
+        <p>Kwaliteitsonderwijs voor een betere toekomst.</p>
+        <a href="boeken" class="btn">Ontdek de catalogus</a>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2></h2>
+      <div class="programs">
+        <div class="program">
+          <i class="fas fa-flask"></i>
+          <h3>Boeken</h3>
+          <p>Ontdek al de boeken.</p>
+        </div>
+        <div class="program">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Auteurs</h3>
+          <p>Ontdek al de auteurs.</p>
+        </div>
+        <div class="program">
+          <i class="fas fa-football-ball"></i>
+          <h3>Beheer</h3>
+          <p>Bestemd voor leerkrachten.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-media">
+      <a href="https://www.facebook.com/kobos.be/?locale=nl_BE"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/kobos_secundair/"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 KOBOS</p>
+    <p>Veldstraat 11 / Mechelseweg 129 - 1880 Kapelle-op-den-Bos</p>
+  </footer>

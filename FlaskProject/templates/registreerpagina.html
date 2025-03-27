@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOBOS - Login Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}"></head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="static/images/logotransparant.png" alt="School Logo">
+            </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+            <li><a href="loginpagina.html">Log in</a></li>
+            <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="login-container">
+        <h2>Registreer</h2>
+        <form method="POST" action="{{ url_for('register') }}"> <!-- zorgt ervoor dat de url verandert naar user credentials -> confirmatie van succesvolle login -->
+        <form>
+            <div class="input-group">
+                <label-login for="username">Naam</label-login> <!-- veld word opgenomen en opgeslagen in database -->
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label-login for="lastname">Achternaam</label-login> <!-- veld word opgenomen en opgeslagen in database -->
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="input-group">
+                <label-login for="e-mail">E-mail</label-login> <!-- veld word opgenomen en opgeslagen in database -->
+                <input type="text" id="e-mail" name="e-mail" required>
+            </div>
+            <div class="input-group">
+                <label-login for="password">Wachtwoord</label-login> <!-- veld word opgenomen en opgeslagen in database -->
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">REGISTREER</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOBOS - Uitleensysteem</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="static/images/logotransparant.png" alt="School Logo">
+              </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+            <li><a href="loginpagina.html">Log in</a></li>
+            <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+          </ul>
+        </nav>
+    </header>
+<!--alles in verschillende containers voor veel controle -->
+
+    <div class="search-container-Uitleensysteem">
+        <h2 class = "h2-uitleensysteem">BOEKEN UITLENEN</h2>
+        <form method="POST"> <!-- if pressed on the button -> search the database -->
+            <div class="input-group-Uitleensysteem">
+                <label class= "label-uitleensysteem" for="ID">ID - leerling</label>
+                <input type="text" id="ID" name="ID" required placeholder="Typ jouw ID in">
+                <input type="submit" value="Zoeken">
+            </div>
+        <div class="search-container-Uitleensysteem2">
+            <div class="input-group1-Uitleensysteem">
+                <label class="label-uitleensysteem" for="ISBN">ISBN nummer</label>
+                <input type="text" id=ISBN name="ISBN" required placeholder="Typ De ISBN nummer van jouw boek in">
+                <input type="submit" value="Zoeken">
+            </div>
+        </div>
+        <button class="knop-uitleensysteem" type="submit"><b>Uitlenen</b></button>
+        <div class="uitleensysteem"> <!-- hier alles in een div voor controle -->
+           {% for leerling in leerlingen %} <!-- zoekt in de database aan de hand van de class in app.py -->
+               <div class = "naam-uitleensysteem">
+                <p><strong>Naam:</strong> {{ leerling.naam }} {{ leerling.voornaam }}</p> <!-- gebruikt de func in app.py -->
+               </div>
+
+               <div class = "klas-uitleensysteem">
+                <p><strong>Klas:</strong> {{ leerling.klas }}</p> <!-- gebruikt de func in app.py -->
+               </div>
+
+            {% endfor %}
+        </div>
+    <!-- hetzelfde hier -->
+        <div class="uitleensysteem2">
+            {% for Boek in boeken %} <!--zoekt in de database aan de hand van de class in app.py -->
+                <div class = "titel-uitleensysteem">
+                    <p><b>{{ Boek.titel }}</b></p> <!-- de manier om zoekterm in een div te steken -->
+               </div>
+
+                <div class = "auteur-uitleensysteem">
+                    <p class="kleur-uitleensysteem "><b>{{ Boek.auteur }}</b></p>
+                </div>
+
+                <div class = "categorie-uitleensysteem">
+                    <p><b>{{ Boek.categorie }} | {{ Boek.jaar }}</b></p>
+               </div>
+
+                <div > <!-- hier voor de foto van de boek te tonen en indien geen foto -> default foto -->
+                    <img class ="boek-foto" src="{{ url_for('static', filename='images/' + (Boek.image_url if Boek.image_url else 'default.png')) }}" alt="{{ Boek.titel }}">
+                </div>
+            {% endfor %}
+        </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOBOS - Uitleensysteem</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+     <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="static/images/logotransparant.png" alt="School Logo">
+            </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Menu</a></li>
+            <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+            <li><a href="loginpagina.html">Log in</a></li>
+            <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+        </ul>
+        </nav>
+    </header>
+    <div class="search-container-beheer">
+        <h2>ZOEK JOUW LEERLING</h2>
+        <form>
+            <div class="input-group1-beheer">
+                <label for="naam">Naam</label>
+                <input type="text" id="naam" name="naam" required placeholder="Typ de naam van de leerling">
+            </div>
+            <div class="input-group2-beheer">
+                <label for="achternaam">Voornaam</label>
+                <input type="achternaam" id="achternaam" name="achternaam" required placeholder="Typ de voornaam van de leerling">
+            </div>
+            <div class="input-group3-beheer">
+                <label for="klas">Klas</label>
+                <input type="klas" id="klas" name="klas" required placeholder="Typ de klas van de leerling">
+            </div>
+            <button-beheer type="submit">ZOEK</button-beheer>
+        </form>
+    </div>
+</body>
+</html>

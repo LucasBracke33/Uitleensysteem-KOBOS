@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOBOS - Uitleensysteem</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/header.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='CSS/footer.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="static/images/logotransparant.png" alt="School Logo">
+      </a>
+      </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="https://secundair.kobos.be/">Over Ons</a></li>
+        <li><a href="loginpagina.html">Log in</a></li>
+        <li><a href="leerkrachtenpagina.html">Leerkrachten</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="center-content">
+    <div class="search-filter-box-leerkrachten">
+      <h1 class="center-text">Kies wat je wilt doen</h1>
+<!-- al de drie knoppen zijn hier met hyperlink naar de bestemde pagina's -->
+      <button class="btn" onclick="window.location.href='toevoegen.html'">
+        <i class="fas fa-plus-circle"></i>
+      </button>
+<!-- gaat naar pagina uitleensysteem -->
+      <button class="btn" onclick="window.location.href='uitleensysteem'">
+        <i class="fas fa-book"></i>
+      </button>
+<!-- gaat naar pagina beheer -->
+      <button class="btn" onclick="window.location.href='beheer.html'">
+        <i class="fas fa-cogs"></i>
+      </button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="social-media">
+      <a href="https://www.facebook.com/kobos.be/?locale=nl_BE"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/kobos_secundair/"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 KOBOS</p>
+    <p>Veldstraat 11 / Mechelseweg 129 - 1880 Kapelle-op-den-Bos</p>
+  </footer>
+
+  <script>
+    function zoeken() {
+      const zoekTerm1 = document.getElementById('search1').value;
+      const zoekTerm2 = document.getElementById('search2').value;
+      const zoekTerm3 = document.getElementById('search3').value;
+      const zoekTerm4 = document.getElementById('search4').value;
+
+      alert(`Je zocht naar: "${zoekTerm1}", "${zoekTerm2}", "${zoekTerm3}", "${zoekTerm4}"`);
+    }
+  </script>
+
+</body>
+</html>
